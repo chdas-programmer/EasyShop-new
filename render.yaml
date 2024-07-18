@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: frontend
+    env: static
+    static_publish_path: frontend/dist
+    build_command: npm install && npm run build --prefix frontend
+    start_command: serve -s frontend/dist
+    
+
+  - type: web
+    name: backend
+    env: node
+    build_command: npm install
+    start_command: node backend/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+

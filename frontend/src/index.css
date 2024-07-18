@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body {
+  
+  color: rgb(0, 0, 0);
+  margin-top: 63px;
+  background-image: url('/frontend/public/p3.jpg');
+
+  /* background: #0c0c0c;
+  color: rgb(247, 243, 243); */
+}
+
+input,
+textarea {
+  color: rgb(14, 13, 13);
+}
