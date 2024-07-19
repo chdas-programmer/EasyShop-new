@@ -52,7 +52,6 @@ if (process.env.NODE_ENV === 'production') {
   // Production CORS setup
   const allowedOrigins = [process.env.PRODUCTION_CLIENT_URL];
   app.use(cors({
-    
     credentials:true,
     origin: function (origin, callback) {
       if (!origin || allowedOrigins.includes(origin)) {
@@ -65,8 +64,6 @@ if (process.env.NODE_ENV === 'production') {
   }));
 
   app.set('trust proxy',1)
-  
-
 } else {
   // Development CORS setup
   app.use(cors());
