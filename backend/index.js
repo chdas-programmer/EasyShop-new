@@ -52,6 +52,7 @@ if (process.env.NODE_ENV === 'production') {
   // Production CORS setup
   const allowedOrigins = [process.env.PRODUCTION_CLIENT_URL];
   app.use(cors({
+    credentials:true,
     origin: function (origin, callback) {
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
