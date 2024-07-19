@@ -30,6 +30,14 @@ const ProductTabs = ({
   return (
     <div className="flex flex-col md:flex-row">
       <section className="mr-[5rem]">
+      <div
+          className={`flex-1 p-4 cursor-pointer text-lg ${
+            activeTab === 1 ? "font-bold" : ""
+          }`}
+          onClick={() => handleTabClick(3)}
+        >
+          Related Products
+        </div>
         <div
           className={`flex-1 p-4 cursor-pointer text-lg ${
             activeTab === 3 ? "font-bold" : ""
@@ -46,17 +54,26 @@ const ProductTabs = ({
         >
           All Reviews
         </div>
-        <div
-          className={`flex-1 p-4 cursor-pointer text-lg ${
-            activeTab === 1 ? "font-bold" : ""
-          }`}
-          onClick={() => handleTabClick(3)}
-        >
-          Related Products
-        </div>
+       
       </section>
 
       {/* Second Part */}
+      <section>
+        {activeTab === 3 && (
+          <section className="ml-[4rem] flex flex-wrap">
+            {!data ? (
+              <Loader />
+            ) : (
+              data.map((product) => (
+                <div key={product._id}>
+                  <SmallProduct product={product} />
+                </div>
+              ))
+            )}
+          </section>
+        )}
+      </section>
+      
       <section>
         {activeTab === 1 && (
           <div className="mt-4">
@@ -141,21 +158,7 @@ const ProductTabs = ({
         )}
       </section>
 
-      <section>
-        {activeTab === 3 && (
-          <section className="ml-[4rem] flex flex-wrap">
-            {!data ? (
-              <Loader />
-            ) : (
-              data.map((product) => (
-                <div key={product._id}>
-                  <SmallProduct product={product} />
-                </div>
-              ))
-            )}
-          </section>
-        )}
-      </section>
+      
     </div>
   );
 };
