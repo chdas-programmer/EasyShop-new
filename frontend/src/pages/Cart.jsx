@@ -51,7 +51,7 @@ const Cart = () => {
 
                     <div className="mt-2 text-black">{item.brand}</div>
                     <div className="mt-2 text-black font-bold">
-                    ₹ {item.price}
+                    $ {item.price}
                     </div>
                   </div>
 
