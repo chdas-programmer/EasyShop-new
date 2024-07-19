@@ -52,18 +52,27 @@ if (process.env.NODE_ENV === 'production') {
   // Production CORS setup
   const allowedOrigins = [process.env.PRODUCTION_CLIENT_URL];
   app.use(cors({
+    
+    credentials:true,
     origin: function (origin, callback) {
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
         callback(new Error('Not allowed by CORS'));
       }
+      
     },
   }));
+
+  app.set('trust proxy',1)
+  
+
 } else {
   // Development CORS setup
   app.use(cors());
 }
+
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
