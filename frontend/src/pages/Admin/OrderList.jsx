@@ -17,7 +17,7 @@ const OrderList = () => {
         </Message>
       ) : (
         <table className="container mx-auto">
-          <AdminMenu />
+          {/* <AdminMenu /> */}
 
           <thead className="w-full border">
             <tr className="mb-[5rem]">
@@ -50,7 +50,7 @@ const OrderList = () => {
                   {order.createdAt ? order.createdAt.substring(0, 10) : "N/A"}
                 </td>
 
-                <td>$ {order.totalPrice}</td>
+                <td>₹ {order.totalPrice}</td>
 
                 <td className="py-2">
                   {order.isPaid ? (

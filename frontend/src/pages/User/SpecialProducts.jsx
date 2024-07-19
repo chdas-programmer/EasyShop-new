@@ -33,8 +33,11 @@ const SpecialProducts = () => {
           opacity: 1
         }}
          
+        
          
          >
+
+{/* <div className="h-[500px] w-[500px] mr-[900px] mt-[20px]  bg-gradient-to-r from-violet-400 to-violet-60 absolute rounded-full"></div> */}
          <div className="flex justify-between items-center   ">
             <h1 className="ml-[20rem] mt-[3rem] text-[3rem] text-gray-300 font-bold">
               Special Products

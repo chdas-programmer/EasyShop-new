@@ -124,13 +124,13 @@ const HeroSection = ({ handleOrderPopup }) => {
       backgroundImage: `url('${Image4}')`, // Replace with your actual image path
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      opacity: 1
+      opacity: 1.2
     }}
     
     >
       {/* background pattern */}
-      {/* <div className="h-[1000px] w-[1000px] mr-[900px] mt-[200px]  bg-violet-400 absolute -top-1/2 right-0 rounded-[270px] rotate-45 -z[8]"></div>
-      <div className="h-[1000px] w-[1000px] mr-[0px] mt-[1300px] ml-[1600px]  bg-violet-600 absolute -top-1/2 right-0 rounded-[200px] rotate-45 -z[8]"></div> */}
+      <div className="h-[1000px] w-[1000px] mr-[900px] mt-[200px]  bg-gradient-to-r from-violet-400 to-violet-60 absolute -top-1/2 right-0 rounded-[270px] rotate-45 -z[8]"></div>
+      <div className="h-[1000px] w-[1000px] mr-[0px] mt-[1300px] ml-[1600px]  bg-gradient-to-l from-violet-400 to-violet-60 absolute -top-1/2 right-0 rounded-[200px] rotate-45 -z[8]"></div>
       {/* <div className="h-[700px] w-[700px] bg-gray-300 absolute  -buttom-1/2 top-[400px]  -left-32 rounded-3xl rotate-45 z[8]"></div> 
        <div className="h-[500px] w-[500px] bg-gray-200 absolute  top-[550px]  mr-[300px] mb-[200px] right-0 -buttom-3 rounded-3xl rotate-45 z[8]"></div> */}
       

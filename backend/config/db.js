@@ -21,7 +21,7 @@ dotenv.config({ path: ".env" });
 const dbConnection = () => {
   mongoose
     .connect(process.env.MONGO_URI, {
-      dbName: "EasyShop",
+      // dbName: "EasyShop",
     })
     .then(() => {
       console.log("Connected to database.");

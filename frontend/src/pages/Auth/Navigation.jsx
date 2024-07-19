@@ -273,7 +273,7 @@ const Navigation = () => {
       <div className="navigation-links ml-64">
         <Link to="/" className="nav-link">
           <AiOutlineHome size={26} />
-          <span className="nav-item-name font-bold text-red-500">EasyShop</span>
+          <span className="nav-item-name font-bold text-gray-100">EasyShop</span>
         </Link>
 
         <Link to="/shop" className="nav-link">
