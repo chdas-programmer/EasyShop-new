@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useParams } from "react-router-dom";
 import Ratings from "./Ratings";
 import { useGetTopProductsQuery } from "../../redux/api/productApiSlice";
 import SmallProduct from "./SmallProduct";
 import Loader from "../../components/Loader";
+import { useGetOrderDetailsQuery } from "../../redux/api/orderApiSlice";
+import { useGetMyOrdersQuery } from "../../redux/api/orderApiSlice";
 
 const ProductTabs = ({
   loadingProductReview,
@@ -15,7 +17,28 @@ const ProductTabs = ({
   setComment,
   product,
 }) => {
+
+ 
   const { data, isLoading } = useGetTopProductsQuery();
+  const { data: orders,  error } = useGetMyOrdersQuery();
+  const { id: productId } = useParams();
+  console.log(productId);
+
+  console.log(orders);
+
+  // Ensure orders is an array and check if the product is delivered in any order
+  const isProductDelivered = Array.isArray(orders) && orders.some(order => 
+    Array.isArray(order.orderItems) && order.orderItems.some(item => 
+      item.product.toString() === productId && order.status === 'delivered'
+    )
+  );
+
+  console.log(isProductDelivered);
+
+
+ 
+
+
 
   const [activeTab, setActiveTab] = useState(1);
 
@@ -34,18 +57,21 @@ const ProductTabs = ({
           className={`flex-1 p-4 cursor-pointer text-lg ${
             activeTab === 1 ? "font-bold" : ""
           }`}
-          onClick={() => handleTabClick(3)}
+          onClick={() => handleTabClick(1)}
         >
           Related Products
         </div>
-        <div
-          className={`flex-1 p-4 cursor-pointer text-lg ${
-            activeTab === 3 ? "font-bold" : ""
-          }`}
-          onClick={() => handleTabClick(1)}
-        >
-          Write Your Review
-        </div>
+       {
+        isProductDelivered && <div
+        className={`flex-1 p-4 cursor-pointer text-lg ${
+          activeTab === 3 ? "font-bold" : ""
+        }`}
+        onClick={() => handleTabClick(3)}
+      >
+        Write Your Review
+      </div>
+
+       } 
         <div
           className={`flex-1 p-4 cursor-pointer text-lg ${
             activeTab === 2 ? "font-bold" : ""
@@ -59,7 +85,7 @@ const ProductTabs = ({
 
       {/* Second Part */}
       <section>
-        {activeTab === 3 && (
+        {activeTab === 1 && (
           <section className="ml-[4rem] flex flex-wrap">
             {!data ? (
               <Loader />
@@ -75,7 +101,7 @@ const ProductTabs = ({
       </section>
       
       <section>
-        {activeTab === 1 && (
+        {activeTab === 3 && (
           <div className="mt-4">
             {userInfo ? (
               <form onSubmit={submitHandler}>
@@ -140,10 +166,10 @@ const ProductTabs = ({
               {product.reviews.map((review) => (
                 <div
                   key={review._id}
-                  className="bg-[#1A1A1A] p-4 rounded-lg xl:ml-[2rem] sm:ml-[0rem] xl:w-[50rem] sm:w-[24rem] mb-5"
+                  className="p-4 rounded-lg xl:ml-[2rem] sm:ml-[0rem] xl:w-[50rem] sm:w-[24rem] mb-5"
                 >
                   <div className="flex justify-between">
-                    <strong className="text-[#B0B0B0]">{review.name}</strong>
+                    <strong className="">{review.name}</strong>
                     <p className="text-[#B0B0B0]">
                       {review.createdAt.substring(0, 10)}
                     </p>

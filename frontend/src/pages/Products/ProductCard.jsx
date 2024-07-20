@@ -17,23 +17,23 @@ const ProductCard = ({ p }) => {
   };
 //
   return (
-    <div className="max-w-sm relative bg-[#1A1A1A]  bg-gray-800 rounded-lg shaodw dark:bg-gray-600 dark:border-gray-500">
+    <div className="max-w-sm relative bg-[#1A1A1A]  bg-gray-800 rounded-lg shaodw dark:bg-gray-600 dark:border-gray-500 rounded-full">
       <section className="relative">
         <Link to={`/product/${p._id}`}>
           <span className="absolute bottom-3 right-3 bg-pink-100 text-pink-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
             {p?.brand}
           </span>
           <img
-            className="cursor-pointer w-full"
+            className="cursor-pointer w-[400px] "
             src={p.image}
             alt={p.name}
-            style={{ height: "170px", objectFit: "cover" }}
+            style={{ height: "200px", objectFit: "cover" }}
           />
         </Link>
         <HeartIcon product={p} />
       </section>
 
-      <div className="p-5">
+      <div className="p-6 h-[200px]">
         <div className="flex justify-between">
           <h5 className="mb-2 text-xl text-whiet dark:text-white">{p?.name}</h5>
 
@@ -54,7 +54,7 @@ const ProductCard = ({ p }) => {
             to={`/product/${p._id}`}
             className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-pink-700 rounded-lg hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-pink-300 dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
           >
-            Read More
+            View Details
             <svg
               className="w-3.5 h-3.5 ml-2"
               aria-hidden="true"

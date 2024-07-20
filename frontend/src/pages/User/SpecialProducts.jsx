@@ -5,7 +5,7 @@ import Product from "../Products/Product";
 import Loader from "../../components/Loader";
 import Message from "../../components/Message";
 
-import image4 from "../../../public/p2.jpg"
+import image4 from "../../../public/p7.jpg"
 
 
 const SpecialProducts = () => {
@@ -23,8 +23,7 @@ const SpecialProducts = () => {
         </Message>
       ) : (
         <>
-         <div className='bg-indigo-500 min-h-[500px] pb-16 '
-         
+         <div className=' min-h-[500px] pb-16  '
          
          style={{
           backgroundImage: `url('${image4}')`, // Replace with your actual image path

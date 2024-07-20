@@ -5,6 +5,7 @@ import { useGetMyOrdersQuery } from "../../redux/api/orderApiSlice";
 
 const UserOrder = () => {
   const { data: orders, isLoading, error } = useGetMyOrdersQuery();
+  console.log(orders)
 
   return (
     <div className="container mx-auto">
@@ -24,6 +25,7 @@ const UserOrder = () => {
               <td className="py-2">TOTAL</td>
               <td className="py-2">PAID</td>
               <td className="py-2">DELIVERED</td>
+              <td className="py-2">REVIEWS BY YOU</td>
               <td className="py-2"></td>
             </tr>
           </thead>
@@ -36,6 +38,8 @@ const UserOrder = () => {
                   alt={order.user}
                   className="w-[6rem] mb-5"
                 />
+
+               
 
                 <td className="py-2">{order._id}</td>
                 <td className="py-2">{order.createdAt.substring(0, 10)}</td>
@@ -64,6 +68,19 @@ const UserOrder = () => {
                     </p>
                   )}
                 </td>
+
+                <td className="px-2 py-2">
+                  {order.isDelivered ? (
+                    <p className="p-1 text-center bg-green-400 w-[6rem] rounded-full">
+                      
+                    </p>
+                  ) : (
+                    <p className="p-1 text-center bg-red-400 w-[6rem] rounded-full">
+                      Pending
+                    </p>
+                  )}
+                </td>
+
 
                 <td className="px-2 py-2">
                   <Link to={`/order/${order._id}`}>

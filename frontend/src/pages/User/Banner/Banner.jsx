@@ -3,18 +3,20 @@ import BannerImg from "../../../../public/banner5.png";
 import { GrSecure } from "react-icons/gr";
 import { IoFastFood } from "react-icons/io5";
 import { GiFoodTruck } from "react-icons/gi";
-import image4 from "../../../../public/p1.jpg"
+import image4 from "../../../../public/p4.jpg"
 
 const Banner = () => {
   return (
-    <div className="min-h-[550px] flex justify-center bg-gray-300 items-center py-12 sm:py-0"
+    <div className="min-h-[550px] flex justify-center bg-gray-300 items-center py-12 sm:py-0 bg-gradient-to-b from-violet-800 to-violet-60"
     
     
     style={{
-      backgroundImage: `url('${image4}')`, // Replace with your actual image path
+      // backgroundImage: `url('${image4}')`,
+       // Replace with your actual image path
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      opacity: 1
+      opacity: 1,
+     
     }}>
       <div className="container">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">

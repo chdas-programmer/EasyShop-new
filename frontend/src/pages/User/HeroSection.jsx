@@ -121,15 +121,17 @@ const HeroSection = ({ handleOrderPopup }) => {
     <div className="relative overflow-hidden min-h-[550px] mt-0  sm:min-h-[900px]  flex justify-center items-center absolute top-0 left-0 right-0 "
     
     style={{
-      backgroundImage: `url('${Image4}')`, // Replace with your actual image path
-      backgroundSize: 'cover',
+      // backgroundImage: `url('${Image4}')`, 
+      // Replace with your actual image path
+      // backgroundColor:'black',
+      // backgroundSize: 'cover',
       backgroundPosition: 'center',
       opacity: 1.2
     }}
     
     >
       {/* background pattern */}
-      <div className="h-[1000px] w-[1000px] mr-[900px] mt-[200px]  bg-gradient-to-r from-violet-400 to-violet-60 absolute -top-1/2 right-0 rounded-[270px] rotate-45 -z[8]"></div>
+      <div className="h-[1400px] w-[1400px] mr-[900px] mt-[200px]  bg-gradient-to-r from-violet-700 to-violet-60 absolute -top-1/2 right-0 rounded-[270px] rotate-45 -z[8]"></div>
       <div className="h-[1000px] w-[1000px] mr-[0px] mt-[1300px] ml-[1600px]  bg-gradient-to-l from-violet-400 to-violet-60 absolute -top-1/2 right-0 rounded-[200px] rotate-45 -z[8]"></div>
       {/* <div className="h-[700px] w-[700px] bg-gray-300 absolute  -buttom-1/2 top-[400px]  -left-32 rounded-3xl rotate-45 z[8]"></div> 
        <div className="h-[500px] w-[500px] bg-gray-200 absolute  top-[550px]  mr-[300px] mb-[200px] right-0 -buttom-3 rounded-3xl rotate-45 z[8]"></div> */}
@@ -150,7 +152,7 @@ const HeroSection = ({ handleOrderPopup }) => {
                     data-aos="zoom-out"
                     data-aos-duration="500"
                     data-aos-once="true"
-                    className="text-5xl sm:text-6xl lg:text-9xl pl-16 font-bold text-gray-100 "
+                    className="text-5xl sm:text-6xl lg:text-9xl pl-16 font-bold  "
                   >
                     {data.title}
                   </h1>
@@ -158,7 +160,7 @@ const HeroSection = ({ handleOrderPopup }) => {
                     data-aos="fade-up"
                     data-aos-duration="500"
                     data-aos-delay="100"
-                    className="text-sm font-bold pl-16 mt-5 text-gray-300"
+                    className="text-sm font-bold pl-16 mt-5 "
                   >
                     {data.description}
                   </p>
@@ -170,7 +172,7 @@ const HeroSection = ({ handleOrderPopup }) => {
                    
                     <button
                       onClick={handleOrderPopup}
-                      className=" pl-16 from-primary to-secondary hover:scale-105 duration-200 text-gray-300 py-2 px-4 rounded-full  mt-6"
+                      className=" pl-16 from-primary to-secondary hover:scale-105 duration-200  py-2 px-4 rounded-full  mt-6"
                     >
                       Explore Now
                     </button>

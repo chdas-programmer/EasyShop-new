@@ -33,7 +33,7 @@ const SpecialOffer = () => {
       <details>
         <summary class="py-2 outline-none cursor-pointer ">Do you offer international shipping?</summary>
         <div class="px-4 pb-4">
-          <p>Currently, we only provide shipping services within India. However, we may consider expanding our shipping options to international locations in the future. Please stay updated with our website for any changes in shipping destinations.</p>
+          <p>Yes, we  provide shipping services within global.  we are expanding our shipping options to many different international locations .</p>
         </div>
       </details>
       <details>

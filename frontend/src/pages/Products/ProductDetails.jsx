@@ -25,17 +25,18 @@ const ProductDetails = () => {
   const { id: productId } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  const [qty, setQty] = useState(1);
-  const [rating, setRating] = useState(0);
-  const [comment, setComment] = useState("");
-
   const {
     data: product,
     isLoading,
     refetch,
     error,
   } = useGetProductDetailsQuery(productId);
+
+  const [qty, setQty] = useState(1);
+  const [rating, setRating] = useState(0);
+  const [comment, setComment] = useState("");
+
+ 
 
   const { userInfo } = useSelector((state) => state.auth);
 
@@ -68,7 +69,7 @@ const ProductDetails = () => {
       <div>
         <Link
           to="/"
-          className="text-black font-bold  hover:underline ml-[10rem]"
+          className="text-black font-bold  hover:underline ml-[18rem] mt-[100px]"
         >
           Go Back
         </Link>
@@ -82,24 +83,24 @@ const ProductDetails = () => {
         </Message>
       ) : (
         <>
-          <div className="flex flex-wrap relative p-24 items-between mt-[2rem] ml-[10rem]">
+          < div className="flex flex-wrap relative p-24 items-between mt-[2rem] ml-[10rem]">
             <div>
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-[40rem] xl:w-[40rem] lg:w-[40rem] md:w-[30rem] sm:w-[20rem] mr-[2rem] rounded-md"
+                className="w-[400px] h-[350px] object-cover rounded-md rounded-md"
               />
 
-              <HeartIcon product={product} />
+              <HeartIcon className="mr-14" product={product} />
             </div>
 
-            <div className="flex flex-col justify-between ml-6">
+            <div className="flex flex-col justify-between ml-32">
               <h2 className="text-2xl font-bold ">{product.name}</h2>
-              <p className="my-4 xl:w-[35rem] lg:w-[35rem] md:w-[30rem] text-white">
+              <p className="my-4 xl:w-[35rem] lg:w-[35rem] md:w-[30rem] ">
                 {product.description}
               </p>
 
-              <p className="text-5xl my-4 font-extrabold">$ {product.price}</p>
+              <p className="text-5xl my-4 font-extrabold"> ${product.price}</p>
 
               <div className="flex items-center justify-between w-[20rem]">
                 <div className="one">
@@ -118,13 +119,13 @@ const ProductDetails = () => {
                 </div>
 
                 <div className="two">
-                  <h1 className="flex items-center mb-6">
+                  {/* <h1 className="flex items-center mb-6">
                     <FaStar className="mr-2 text-black" /> Ratings: {rating}
-                  </h1>
-                  <h1 className="flex items-center mb-6">
+                  </h1> */}
+                  {/* <h1 className="flex items-center mb-6">
                     <FaShoppingCart className="mr-2 text-black" /> Quantity:{" "}
                     {product.quantity}
-                  </h1>
+                  </h1> */}
                   <h1 className="flex items-center mb-6 w-[10rem]">
                     <FaBox className="mr-2 text-black" /> In Stock:{" "}
                     {product.countInStock}
@@ -171,7 +172,7 @@ const ProductDetails = () => {
                 loadingProductReview={loadingProductReview}
                 userInfo={userInfo}
                 submitHandler={submitHandler}
-                rating={rating}
+                // rating={rating}
                 setRating={setRating}
                 comment={comment}
                 setComment={setComment}

@@ -60,7 +60,7 @@ const support = [
 
 const Footer = () => {
   return (
-    <div  className="text-black font-bold bg-violet-200 h-[500px] pl-64 ">
+    <div  className="text-black font-bold bg-violet-500 h-[500px] pl-64 ">
       <div className="container">
         <div data-aos="zoom-in" className="grid md:grid-cols-3 pr-5 mr-5 pt-5">
           {/* company details */}
