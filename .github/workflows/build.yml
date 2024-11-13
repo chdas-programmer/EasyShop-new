@@ -26,13 +26,13 @@ jobs:
       - name: Install Frontend Dependencies
         run: cd frontend && npm install
 
-      # Backend build and tests (if any)
+      # Start backend (only if required)
       - name: Start Backend
         run: npm run backend &
 
-      # Frontend build and tests
+      # Build frontend for production
       - name: Build Frontend
-        run: cd frontend && npm run dev
+        run: cd frontend && npm run build
 
       # Optional: Run tests if you have any
       - name: Run Tests
