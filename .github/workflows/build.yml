@@ -32,7 +32,7 @@ jobs:
 
       # Frontend build and tests
       - name: Build Frontend
-        run: npm run frontend
+        run: cd frontend && npm run dev
 
       # Optional: Run tests if you have any
       - name: Run Tests
